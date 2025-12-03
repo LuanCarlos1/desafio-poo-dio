@@ -2,6 +2,31 @@ package br.com.upgrade.desafio.dominio;
 
 import java.time.LocalDate;
 
-public record Mentoria(String titulo, String descricao, LocalDate data) {
+public class Mentoria extends Conteudo {
 
+    private final LocalDate data;
+
+    public Mentoria(String titulo, String descricao, LocalDate data) {
+        super(titulo, descricao);
+        this.data = data;
+    }
+
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20;
+    }
+
+    @Override
+    public String toString() {
+        return "Mentoria{" +
+                "titulo=" + getTitulo() +
+                " |descricao=" + getDescricao() +
+                " |data=" + data +
+                '}';
+    }
 }
