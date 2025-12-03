@@ -11,11 +11,6 @@ public class Mentoria extends Conteudo {
         this.data = data;
     }
 
-
-    public LocalDate getData() {
-        return data;
-    }
-
     @Override
     public double calcularXp() {
         return XP_PADRAO + 20;
